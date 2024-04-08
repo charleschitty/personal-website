@@ -14,16 +14,18 @@ function Navbar(): JSX.Element {
 
     return (
         <div className="Navbar">
-            <NavLink to="/" end>
-                me
-            </NavLink>
-            <ul>
-                <li>
-                    <NavLink to="/contact">
-                        Contact
-                    </NavLink>
-                </li>
-            </ul>
+            <nav>
+                <NavLink to="/" end>
+                    me
+                </NavLink>
+                <ul>
+                    <li>
+                        <NavLink to="/contact">
+                            Contact
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
         </div>
     )
 }
