@@ -1,5 +1,11 @@
 import { useState } from "react";
 import "./App.css";
+import React from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./Navbar";
+import RoutesList from"./RoutesList";
 
 
 /** Component for entire page.
@@ -7,31 +13,21 @@ import "./App.css";
  * Props: none
  * State: none
  *
+ * App -> { Navbar, Routes, Body }
  */
 
-function App() {
-  const [count, setCount] = useState(0);
+function App(): React.ReactElement {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
-  function incrCount() {
-    setCount(count => count + 1);
+  /** handleScroll: moves page to different sections */
+  function handleScroll() {
+    const aboutMe = document.querySelector("#about-me");
+    aboutMe?.scrollIntoView({ behavior: "smooth"});
   }
 
   return (
-    <div className="App">
-      <main>
-        <h1>Rithm React Starter</h1>
-        <p>
-          <button
-            className="btn btn-primary"
-            onClick={ incrCount }>
-            Clicked: { count }
-          </button>
-        </p>
-        <p>
-          Edit <code>src/App.tsx</code>
-        </p>
-      </main>
-    </div>
+    <BrowserRouter>
+    </BrowserRouter>
   );
 };
 
