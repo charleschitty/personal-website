@@ -27,6 +27,24 @@ function App(): React.ReactElement {
 
   return (
     <BrowserRouter>
+      <Navbar />
+      <Parallax page={2} className="Parallax-main">
+        <ParallaxLayer
+          className="tree-bg"
+          offset={0}
+          speed={0.25}
+          factor={2}
+          style={{
+            backgroundImage=`url${background})`,
+            backgroundSize:'cover',
+          }}
+        >
+          <div className="container">
+            <img className="profile-img col-8 mt-5"
+
+          </div>
+        </ParallaxLayer>
+      </Parallax>
     </BrowserRouter>
   );
 };
