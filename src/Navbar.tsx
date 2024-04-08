@@ -24,7 +24,6 @@ function Navbar(): JSX.Element {
                     </NavLink>
                 </li>
             </ul>
-
         </div>
     )
 }
