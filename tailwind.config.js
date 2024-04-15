@@ -21,6 +21,9 @@ module.exports = {
         geist: ['GeistSans', 'sans'],
         'geist-mono': ['GeistMono', 'monospace'],
       },
+      maxWidth: {
+        "34": "34rem"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
