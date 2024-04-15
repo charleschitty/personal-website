@@ -8,8 +8,6 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
 import React from 'react';
 import moment from 'moment-timezone';
 
@@ -27,26 +25,26 @@ export default function Page() {
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
         <div className="flex items-center space-x-4">
           <div>
-            <Avatar className="size-28">
-              <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
+            <Avatar className="size-20">
+              <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} style={{ borderRadius: '50%' }} />
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
           </div>
           <div>
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
+            <h1 className="text-sm text-pretty font-medium font-mono">{RESUME_DATA.name}</h1>
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
               {RESUME_DATA.about}
             </p>
           </div>
         </div>
         <Section>
-          <h2 className="text-xl font-bold">Profile</h2>
+          <h2 className="text-xs font-bold font-geist-mono">Profile</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
+          <h2 className="text-xs font-bold font-geist-mono">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return <Badge key={skill}>{skill}</Badge>;
@@ -55,7 +53,7 @@ export default function Page() {
         </Section>
 
         <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Projects</h2>
+          <h2 className="text-xs font-bold font-geist-mono">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
@@ -71,7 +69,7 @@ export default function Page() {
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Contact</h2>
+          <h2 className="text-xs font-bold font-geist-mono">Contact</h2>
           <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
@@ -118,10 +116,10 @@ export default function Page() {
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Now Playing</h2>
+          <h2 className="text-xs font-bold font-geist-mono">Now Playing</h2>
               <Button
                 key="Currently Playing"
-                className="size-8"
+                className="size-28"
                 variant="outline"
                 size="icon"
                 asChild
@@ -137,17 +135,7 @@ export default function Page() {
               </Button>
         </Section>
         <Section>
-          <iframe
-            src="https://open.spotify.com/embed/track/1acVBP8BcK6LTeNeFjfxnh?utm_source=generator&theme=0"
-            width="100%"
-            height="152"
-            frameBorder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </Section>
-        <Section>
+          <footer className="mt-8 py-4 text-center border-t border-gray-300">
           <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
@@ -158,21 +146,9 @@ export default function Page() {
                 {RESUME_DATA.location.split(",")[0]}, {locationTime}
               </a>
             </p>
-
+          </footer>
         </Section>
       </section>
-      <CommandMenu
-        links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
-            url: socialMediaLink.url,
-            title: socialMediaLink.name,
-          })),
-        ]}
-      />
     </main>
   );
 }
