@@ -1,17 +1,14 @@
 export const CVIcon = (props: React.SVGProps<SVGSVGElement>) => {
     return (
-        <svg
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            >
-            <text x="0" y="15" fontSize="16" fontWeight="bold">
-                CV
-            </text>
+        // <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        // <rect x="4" y="4" width="16" height="16" fill="#999999"/>
+        // <text x="50%" y="50%" text-anchor="middle" alignment-baseline="central" font-family="Arial" font-size="12" fill="#ffffff">CV</text>
+        // </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <rect x="4.5" y="4.5" width="15" height="15" rx="2" ry="2" fill="#999999"/>
+        <text x="50%" y="60%" text-anchor="middle" alignment-baseline="central" font-family="fantasy" font-size="8" font-weight="bold" fill="#ffffff">CV</text>
         </svg>
+
     );
 };
 
