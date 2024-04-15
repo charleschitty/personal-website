@@ -10,6 +10,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import React from 'react';
 import moment from 'moment-timezone';
+import { CVIcon } from "@/components/icons/CVIcon";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -23,7 +24,7 @@ export default function Page() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <header className="mx-auto w-full max-w-34 space-y-8 text-center border-b border-gray-300 mb-10"> </header>
-      <section className="mx-auto w-full max-w-lg space-y-8 bg-white print:space-y-6">
+      <section className="mx-auto w-full max-w-34 space-y-16 bg-white print:space-y-6">
         {/* <header className="py-4 text-center border-b border-gray-300"> </header> */}
         {/* <header className="py-2 text-center border-b border-gray-300"> </header> */}
         <div className="flex items-center space-x-4">
@@ -73,10 +74,10 @@ export default function Page() {
         </Section>
         <Section>
           <h2 className="text-xs font-bold font-geist-mono">Contact</h2>
-          <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+          <div className="flex gap-x-4 pt-1 font-mono text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
-                  className="size-8"
+                  className="rounded-full size-10"
                   variant="outline"
                   size="icon"
                   asChild
@@ -89,7 +90,7 @@ export default function Page() {
               {RESUME_DATA.contact.social.map((social) => (
                 <Button
                   key={social.name}
-                  className="size-8"
+                  className="rounded-full size-10"
                   variant="outline"
                   size="icon"
                   asChild
@@ -100,13 +101,13 @@ export default function Page() {
                 </Button>
               ))}
               <Button
-                  className="size-8"
+                  className="rounded-full size-10"
                   variant="outline"
                   size="icon"
                   asChild
                 >
                   <a href={`www.google.com`}>
-                    <MailIcon className="size-4" />
+                    <CVIcon className="size-4" />
                   </a>
                 </Button>
           </div>
