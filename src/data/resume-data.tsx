@@ -5,11 +5,13 @@ import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import profilePicture from "../images/profilePic.jpg";
 // import resumePdf from "../images/resume.pdf";
 
+
 export const RESUME_DATA = {
   name: "Charles Chitty",
   initials: "CC",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/San-Francisco",
+  timeZone:"America/Los_Angeles",
   about:
     "Fullstack Software Engineer",
   summary:
