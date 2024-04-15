@@ -10,6 +10,8 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import React from 'react';
+import moment from 'moment-timezone';
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -17,9 +19,39 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const locationTime = moment().tz(RESUME_DATA.timeZone).format('hh:mm A');
+
   // const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+        <div className="flex items-center space-x-4"> {/* Use flexbox for horizontal layout */}
+          <div>
+            <Avatar className="size-28">
+              <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
+              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+            </Avatar>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
+            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+              {RESUME_DATA.about}
+            </p>
+            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+              <a
+                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                href={RESUME_DATA.locationLink}
+                target="_blank"
+              >
+                <GlobeIcon className="size-3" />
+                {RESUME_DATA.location}
+              </a>
+            </p>
+          </div>
+        </div>
+        {/* Rest of your sections */}
+
+    {/* <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
@@ -43,7 +75,7 @@ export default function Page() {
             <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
-        </div>
+        </div> */}
         <Section>
           <h2 className="text-xl font-bold">Profile</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
@@ -134,15 +166,27 @@ export default function Page() {
                 <iframe
                  src="https://open.spotify.com/embed/track/5VBjyOQzqlPNgdRPMM6prF?utm_source=generator&theme=0"
                  width="100%"
-                 height="2000"
+                 height="100"
+                 sandbox=""
                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                  loading="lazy">
                  </iframe>
               </Button>
         </Section>
         <Section>
+          <iframe
+            src="https://open.spotify.com/embed/track/1acVBP8BcK6LTeNeFjfxnh?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </Section>
+        <Section>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
-            {RESUME_DATA.location}
+            {RESUME_DATA.location.split(",")[0]}, {locationTime}
 
           </p>
         </Section>
