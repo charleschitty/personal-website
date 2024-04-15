@@ -22,10 +22,13 @@ export default function Page() {
   // const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+      <header className="mx-auto w-full max-w-34 space-y-8 text-center border-b border-gray-300 mb-10"> </header>
+      <section className="mx-auto w-full max-w-lg space-y-8 bg-white print:space-y-6">
+        {/* <header className="py-4 text-center border-b border-gray-300"> </header> */}
+        {/* <header className="py-2 text-center border-b border-gray-300"> </header> */}
         <div className="flex items-center space-x-4">
           <div>
-            <Avatar className="size-20">
+            <Avatar className="size-16">
               <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} style={{ borderRadius: '50%' }} />
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
@@ -135,7 +138,7 @@ export default function Page() {
               </Button>
         </Section>
         <Section>
-          <footer className="mt-8 py-4 text-center border-t border-gray-300">
+          <hr className="my-4 border-gray-300" />
           <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
@@ -146,7 +149,6 @@ export default function Page() {
                 {RESUME_DATA.location.split(",")[0]}, {locationTime}
               </a>
             </p>
-          </footer>
         </Section>
       </section>
     </main>
