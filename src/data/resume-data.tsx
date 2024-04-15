@@ -15,7 +15,7 @@ export const RESUME_DATA = {
   about:
     "Fullstack Software Engineer",
   summary:
-    "Insert summary here.",
+    "A full stack designer based in San Francisco but working remotely.",
   avatarUrl: profilePicture,
   personalWebsiteUrl: "https://charleschitty.com",
   // resumePdf: resumePdf,
