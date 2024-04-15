@@ -1,11 +1,12 @@
 import {
   FrienderLogo,
 } from "@/images/logos";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { GitHubIcon, LinkedInIcon, CVIcon } from "@/components/icons";
 import profilePicture from "../images/profilePic.jpg";
+
 // import resumePdf from "../images/resume.pdf";
 
-
+let x= CVIcon
 export const RESUME_DATA = {
   name: "Charles Chitty",
   initials: "CC",
@@ -32,6 +33,11 @@ export const RESUME_DATA = {
         url: "https://www.linkedin.com/in/charles-chitty/",
         icon: LinkedInIcon,
       },
+      {
+        name:"Resume",
+        url:"https://google.com",
+        icon: CVIcon,
+      }
     ],
   },
   education: [
