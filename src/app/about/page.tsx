@@ -12,43 +12,20 @@ import React from 'react';
 import moment from 'moment-timezone';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider } from 'next-themes';
-import { themes } from './themes';
+import { themes } from '../themes';
 
 
 export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
+    title: "About",
 };
 
-export default function Page() {
+export default function AboutPage() {
   const locationTime = moment().tz(RESUME_DATA.timeZone).format('h:mm A');
 
   return (
     <ThemeProvider {...themes}>
     <Theme appearance="dark">
     <main className={`container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-8`}>
-      <nav className="flex justify-between items-center mx-auto max-w-33.5 print:space-y-6 mb-1">
-        <p className="text-pretty font-geist-mono text-sm text-muted-foreground">
-          <a
-            className="inline-flex gap-x-1.5 align-baseline leading-none font-semibold text-black underline opacity-90"
-            href="/"
-            target="_blank"
-          > Work </a> <span> / </span>
-          <a
-            className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-            href="/about"
-            target="_blank"
-          > About </a>
-        </p>
-        <Button
-          className="rounded-full"
-          variant="ghost"
-          asChild
-        >
-          <span className="text-pretty font-geist-mono text-sm text-muted-foreground"> Lights On </span>
-        </Button>
-      </nav>
-      <header className="mx-auto w-full max-w-34 space-y-8 text-center border-b border-gray-300 mb-10"> </header>
       <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
         <div className="flex items-center space-x-4">
           <div>
@@ -64,37 +41,6 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <Section>
-          <h2 className="text-xs font-bold font-geist-mono">Profile</h2>
-          <p className="text-pretty font-sans-serif text-sm text-muted-foreground">
-            {RESUME_DATA.summary}
-          </p>
-        </Section>
-        <Section>
-          <h2 className="text-xs font-bold font-geist-mono">Skills</h2>
-          <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
-            })}
-          </div>
-        </Section>
-
-        <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xs font-bold font-geist-mono">Projects</h2>
-          <div className="-mx-2 grid grid-cols-1 gap-3 print:grid-cols-1 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {RESUME_DATA.projects.map((project) => {
-              return (
-                <ProjectCard
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.techStack}
-                  link={"link" in project ? project.link.href : undefined}
-                />
-              );
-            })}
-          </div>
-        </Section>
         <Section>
           <h2 className="text-xs font-bold font-geist-mono">Contact</h2>
           <div className="flex gap-x-4 pt-1 font-sans-serif text-sm text-muted-foreground print:hidden">
