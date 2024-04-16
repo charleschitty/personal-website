@@ -19,7 +19,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
     <Card className="flex flex-col overflow-hidden border border-muted p-3">
       <CardHeader className="">
         <div className="space-y-1">
-          <CardTitle className="text-sm font-mono">
+          <CardTitle className="text-xs font-GeistMono">
             {link ? (
               <a
                 href={link}
@@ -45,7 +45,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
         <div className="mt-2 flex flex-wrap gap-1 text-xs">
           {tags.map((tag) => (
             <Badge
-              className="px-1 py-0 text-[10px]"
+              className="px-1 py-0 text-[8px]"
               variant="secondary"
               key={tag}
             >
