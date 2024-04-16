@@ -24,9 +24,8 @@ export default function AboutPage() {
 
   return (
     <ThemeProvider {...themes}>
-    <Theme appearance="dark">
-    <main className={`container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-8`}>
-      <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
+    <Theme appearance="light">
+        <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
         <div className="flex items-center space-x-4">
           <div>
             <Avatar className="size-16">
@@ -35,8 +34,8 @@ export default function AboutPage() {
             </Avatar>
           </div>
           <div>
-            <h1 className="text-sm text-pretty font-mono">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-[13px] text-muted-foreground">
+            <h1 className="text-sm text-pretty font-GeistMono">{RESUME_DATA.name}</h1>
+            <p className="max-w-md text-pretty font-GeistMono text-[13px] text-muted-foreground">
               {RESUME_DATA.about}
             </p>
           </div>
@@ -98,8 +97,7 @@ export default function AboutPage() {
             <span className="ml-auto"> &copy; {new Date().getFullYear()} {RESUME_DATA.name}  </span>
           </p>
         </Section>
-      </section>
-    </main>
+        </section>
     </Theme>
     </ThemeProvider>
   );

@@ -3,6 +3,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
+import { Widget } from "@/components/ui/widget";
 // import { Spotify } from "@/components/ui/spotify";
 import { GlobeIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,8 +17,7 @@ import { themes } from './themes';
 
 
 export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
+  title: `${RESUME_DATA.name}`
 };
 
 export default function Page() {
@@ -25,31 +25,8 @@ export default function Page() {
 
   return (
     <ThemeProvider {...themes}>
-    <Theme appearance="dark">
-    <main className={`container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-8`}>
-      <nav className="flex justify-between items-center mx-auto max-w-33.5 print:space-y-6 mb-1">
-        <p className="text-pretty font-geist-mono text-sm text-muted-foreground">
-          <a
-            className="inline-flex gap-x-1.5 align-baseline leading-none font-semibold text-black underline opacity-90"
-            href="/"
-            target="_blank"
-          > Work </a> <span> / </span>
-          <a
-            className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-            href="/about"
-            target="_blank"
-          > About </a>
-        </p>
-        <Button
-          className="rounded-full"
-          variant="ghost"
-          asChild
-        >
-          <span className="text-pretty font-geist-mono text-sm text-muted-foreground"> Lights On </span>
-        </Button>
-      </nav>
-      <header className="mx-auto w-full max-w-34 space-y-8 text-center border-b border-gray-300 mb-10"> </header>
-      <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
+    <Theme appearance="light">
+      <section className="mx-auto w-full max-w-34 space-y-12 print:space-y-6">
         <div className="flex items-center space-x-4">
           <div>
             <Avatar className="size-16">
@@ -58,12 +35,23 @@ export default function Page() {
             </Avatar>
           </div>
           <div>
-            <h1 className="text-sm text-pretty font-mono">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-[13px] text-muted-foreground">
+            <h1 className="text-sm text-pretty font-GeistMono">{RESUME_DATA.name}</h1>
+            <p className="max-w-md text-pretty font-GeistMono text-[13px] text-muted-foreground">
               {RESUME_DATA.about}
             </p>
           </div>
         </div>
+        <Section>
+          <div>
+            <Widget
+              key="Reading"
+              className="inline-flex text-pretty text-xs font-GeistSans text-muted-foreground"
+              variant="secondary"
+              timestamp={new Date("2024-04-16T08:00:00Z")}
+              link="/reading"
+              label="My Reading List" />
+          </div>
+        </Section>
         <Section>
           <h2 className="text-xs font-bold font-geist-mono">Profile</h2>
           <p className="text-pretty font-sans-serif text-sm text-muted-foreground">
@@ -153,7 +141,6 @@ export default function Page() {
           </p>
         </Section>
       </section>
-    </main>
     </Theme>
     </ThemeProvider>
   );
