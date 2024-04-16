@@ -3,7 +3,7 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
-import { Spotify } from "@/components/ui/spotify";
+// import { Spotify } from "@/components/ui/spotify";
 import { GlobeIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
@@ -17,11 +17,24 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const locationTime = moment().tz(RESUME_DATA.timeZone).format('hh:mm A');
-
-  // const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const locationTime = moment().tz(RESUME_DATA.timeZone).format('h:mm A');
+;
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+    <main className={`container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-10`}>
+      <nav className="mx-auto max-w-34 space-y-8 bg-white print:space-y-6 mb-3">
+        <p className="text-pretty font-geist-mono text-sm text-muted-foreground">
+          <a
+              className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+              href="/"
+              target="_blank"
+          > Work </a> <span> / </span>
+          <a
+              className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+              href="/about"
+              target="_blank"
+          > About </a>
+        </p>
+      </nav>
       <header className="mx-auto w-full max-w-34 space-y-8 text-center border-b border-gray-300 mb-10"> </header>
       <section className="mx-auto w-full max-w-34 space-y-16 bg-white print:space-y-6">
         {/* <header className="py-4 text-center border-b border-gray-300"> </header> */}
@@ -29,7 +42,7 @@ export default function Page() {
         <div className="flex items-center space-x-4">
           <div>
             <Avatar className="size-16">
-              <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} style={{ borderRadius: '50%' }} />
+              <AvatarImage className="border border-gray-300 rounded-full" alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
           </div>
