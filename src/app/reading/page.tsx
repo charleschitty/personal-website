@@ -16,7 +16,7 @@ import { themes } from '../themes';
 
 
 export const metadata: Metadata = {
-    title: "Book-list",
+    title: "Reading",
 };
 
 export default function ReadingPage() {
@@ -26,63 +26,14 @@ export default function ReadingPage() {
     <ThemeProvider {...themes}>
     <Theme appearance="light">
         <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
-        <div className="flex items-center space-x-4">
-          <div>
-            <Avatar className="size-16">
-              <AvatarImage className="border border-gray-300 rounded-full" alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
-              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-            </Avatar>
-          </div>
-          <div>
-            <h1 className="text-sm text-pretty font-GeistMono">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-GeistMono text-[13px] text-muted-foreground">
-              {RESUME_DATA.about}
-            </p>
-          </div>
-        </div>
-        <Section>
-          <h2 className="text-xs font-bold font-geist-mono">Contact</h2>
-          <div className="flex gap-x-4 pt-1 font-sans-serif text-sm text-muted-foreground print:hidden">
-              {RESUME_DATA.contact.email ? (
-                <Button
-                  className="rounded-full size-10"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <MailIcon className="size-4" />
-                  </a>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.social.map((social) => (
-                <Button
-                  key={social.name}
-                  className="rounded-full size-10"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={social.url}>
-                    <social.icon className="size-4" />
-                  </a>
-                </Button>
-              ))}
-          </div>
-          <div className="hidden flex-col gap-x-1 font-sans-serif text-sm text-muted-foreground print:flex">
-            {RESUME_DATA.contact.email ? (
-              <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                <span className="underline">{RESUME_DATA.contact.email}</span>
-              </a>
-            ) : null}
-          </div>
-        </Section>
-        {/* <Section>
-          <h2 className="text-xs font-bold font-geist-mono">Now Playing</h2>
-          <Spotify
-            src="spotify:track:5VBjyOQzqlPNgdRPMM6prF">
-          </Spotify>
-        </Section> */}
+        <Button
+            className="font-GeistMono text-xs text-muted-foreground print:hidden"
+            variant="secondary"
+        >
+            <a href={"/"} target="_blank">
+                <span className="font-[cambria]"> ← </span>Take me home
+            </a>
+        </Button>
         <Section>
           <hr className="my-2 border-gray-300" />
           <p className="max-w-34 flex justify-between items-center text-pretty font-sans-serif text-xs text-muted-foreground">
