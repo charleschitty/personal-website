@@ -22,7 +22,8 @@ module.exports = {
         'geist-mono': ['GeistMono', 'monospace'],
       },
       maxWidth: {
-        "34": "34rem"
+        "34": "34rem",
+        "33.5": "33.5rem",
       },
       colors: {
         border: "hsl(var(--border))",
