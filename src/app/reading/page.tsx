@@ -4,7 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 // import { Spotify } from "@/components/ui/spotify";
-import { GlobeIcon, MailIcon } from "lucide-react";
+import { BiCheckSquare } from "react-icons/bi";
+import { SquareCheckedIcon } from "@/components/icons";
+import { GlobeIcon, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
@@ -13,7 +15,7 @@ import moment from 'moment-timezone';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider } from 'next-themes';
 import { themes } from '../themes';
-
+import { format } from 'date-fns';
 
 export const metadata: Metadata = {
     title: "Reading",
@@ -21,13 +23,35 @@ export const metadata: Metadata = {
 
 export default function ReadingPage() {
   const locationTime = moment().tz(RESUME_DATA.timeZone).format('h:mm A');
+  const formattedDate = format(RESUME_DATA.lastUpdated, "MM/dd/yyyy")
 
   return (
     <ThemeProvider {...themes}>
     <Theme appearance="light">
-        <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
+        <section className="mx-auto w-full max-w-34 space-y-10 print:space-y-6">
+        <Section>
+            <h2 className="text-xs font-medium text-muted-foreground font-geist-mono">Last Updated: {formattedDate} </h2>
+            <p className="text-pretty font-GeistMono text-xs">
+                This page was inspired by a young boy with a very big book pile.
+            </p>
+        </Section>
+        <Section>
+            <h2 className="text-xs text-muted-foreground font-geist-mono font-medium">Book-list</h2>
+            <div className="flex flex-col gap-5 pl-4">
+                {RESUME_DATA.books.map((book, index) => (
+                    <label key={index} className="inline-flex items-center">
+                        <div className="rounded bg-gray-200 p-1.5 mr-2">
+                            {book.read ? <SquareCheckedIcon className="size-2 text-black" /> : <div className="size-2"></div> }
+                        </div>
+                        <span className={`text-pretty font-GeistMono text-xs ${book.read ? "line-through text-muted-foreground" : "text-black"}`}>
+                            {book.title}
+                        </span>
+                    </label>
+                ))}
+            </div>
+        </Section>
         <Button
-            className="font-GeistMono text-xs text-muted-foreground print:hidden"
+            className="rounded-full h-8 px-4 py-1 font-GeistMono text-xs text-muted-foreground print:hidden"
             variant="secondary"
         >
             <a href={"/"} target="_blank">

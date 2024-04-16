@@ -25,7 +25,7 @@ export default function AboutPage() {
   return (
     <ThemeProvider {...themes}>
     <Theme appearance="light">
-        <section className="mx-auto w-full max-w-34 space-y-16 print:space-y-6">
+        <section className="mx-auto w-full max-w-34 space-y-12 print:space-y-6">
         <div className="flex items-center space-x-4">
           <div>
             <Avatar className="size-16">

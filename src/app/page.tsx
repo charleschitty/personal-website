@@ -47,7 +47,7 @@ export default function Page() {
               key="Reading"
               className="inline-flex text-pretty text-xs font-GeistSans text-muted-foreground"
               variant="secondary"
-              timestamp={new Date("2024-04-16T08:00:00Z")}
+              timestamp={RESUME_DATA.lastUpdated}
               link="/reading"
               label="My Reading List" />
           </div>
