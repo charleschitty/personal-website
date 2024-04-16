@@ -68,6 +68,7 @@ export const RESUME_DATA = {
     { title: "Kafka on the Shore", read: true },
     { title: "Crying in H-Mart", read: false },
     { title: "Eleanor and Park", read: false },
+    { title: "How do you live", read:true},
     { title: "Gentleman in Moscow", read:true},
     { title: "Anna Karenina", read: false},
   ],
