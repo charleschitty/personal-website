@@ -1,16 +1,15 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
-import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { Spotify } from "@/components/ui/spotify";
+import { GlobeIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import React from 'react';
 import moment from 'moment-timezone';
-import { CVIcon } from "@/components/icons/CVIcon";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -43,7 +42,7 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xs font-bold font-geist-mono">Profile</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
+          <p className="text-pretty font-sans-serif text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
         </Section>
@@ -74,7 +73,7 @@ export default function Page() {
         </Section>
         <Section>
           <h2 className="text-xs font-bold font-geist-mono">Contact</h2>
-          <div className="flex gap-x-4 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+          <div className="flex gap-x-4 pt-1 font-sans-serif text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
                   className="rounded-full size-10"
@@ -100,18 +99,8 @@ export default function Page() {
                   </a>
                 </Button>
               ))}
-              <Button
-                  className="rounded-full size-10"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={`www.google.com`}>
-                    <CVIcon className="size-4" />
-                  </a>
-                </Button>
           </div>
-          <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+          <div className="hidden flex-col gap-x-1 font-sans-serif text-sm text-muted-foreground print:flex">
             {RESUME_DATA.contact.email ? (
               <a href={`mailto:${RESUME_DATA.contact.email}`}>
                 <span className="underline">{RESUME_DATA.contact.email}</span>
@@ -121,35 +110,23 @@ export default function Page() {
         </Section>
         <Section>
           <h2 className="text-xs font-bold font-geist-mono">Now Playing</h2>
-              <Button
-                key="Currently Playing"
-                className="size-28"
-                variant="outline"
-                size="icon"
-                asChild
-              >
-                <iframe
-                 src="https://open.spotify.com/embed/track/5VBjyOQzqlPNgdRPMM6prF?utm_source=generator&theme=0"
-                 width="100%"
-                 height="100"
-                 sandbox=""
-                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                 loading="lazy">
-                 </iframe>
-              </Button>
+          {/* <Spotify
+            src="spotify:track:5VBjyOQzqlPNgdRPMM6prF">
+          </Spotify> */}
         </Section>
         <Section>
-          <hr className="my-4 border-gray-300" />
-          <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
-              <a
+          <hr className="my-2 border-gray-300" />
+          <p className="max-w-34 flex justify-between items-center text-pretty font-sans-serif text-xs text-muted-foreground">
+            <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
                 target="_blank"
-              >
+            >
                 <GlobeIcon className="size-3" />
                 {RESUME_DATA.location.split(",")[0]}, {locationTime}
-              </a>
-            </p>
+            </a>
+            <span className="ml-auto"> &copy; {new Date().getFullYear()} {RESUME_DATA.name}  </span>
+          </p>
         </Section>
       </section>
     </main>
