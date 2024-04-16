@@ -21,7 +21,7 @@ export default function Page() {
 ;
   return (
     <main className={`container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-10`}>
-      <nav className="mx-auto max-w-34 space-y-8 bg-white print:space-y-6 mb-3">
+      <nav className="mx-auto max-w-33.5 space-y-8 bg-white print:space-y-6 mb-3">
         <p className="text-pretty font-geist-mono text-sm text-muted-foreground">
           <a
               className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
@@ -70,7 +70,7 @@ export default function Page() {
 
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xs font-bold font-geist-mono">Projects</h2>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="-mx-2 grid grid-cols-1 gap-3 print:grid-cols-1 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
                 <ProjectCard
