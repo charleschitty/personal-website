@@ -28,6 +28,7 @@ export const RESUME_DATA = {
   ],
   avatarUrl: profilePicture,
   personalWebsiteUrl: "https://charleschitty.com",
+  lastUpdated: new Date("2024-04-16T08:00:00Z"),
   // resumePdf: resumePdf,
   contact: {
     email: "charlescchitty@gmail.com",
@@ -62,6 +63,13 @@ export const RESUME_DATA = {
     "TypeScript",
     "React",
     "Node.js",
+  ],
+  books:[
+    { title: "Kafka on the Shore", read: true },
+    { title: "Crying in H-Mart", read: false },
+    { title: "Eleanor and Park", read: false },
+    { title: "Gentleman in Moscow", read:true},
+    { title: "Anna Karenina", read: false},
   ],
   projects: [
     {
