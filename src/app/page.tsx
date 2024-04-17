@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { Widget } from "@/components/ui/widget";
-// import { Spotify } from "@/components/ui/spotify";
+import { Spotify } from "@/components/ui/spotify";
 import { GlobeIcon, MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
