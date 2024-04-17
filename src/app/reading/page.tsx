@@ -16,6 +16,7 @@ import { Theme } from '@radix-ui/themes';
 import { ThemeProvider } from 'next-themes';
 import { themes } from '../themes';
 import { format } from 'date-fns';
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Reading",
@@ -41,9 +42,9 @@ export default function ReadingPage() {
                 {RESUME_DATA.books.map((book, index) => (
                     <label key={index} className="inline-flex items-center">
                         <div className="rounded bg-gray-200 p-1.5 mr-2">
-                            {book.read ? <SquareCheckedIcon className="size-2 text-black" /> : <div className="size-2"></div> }
+                            {book.read ? <SquareCheckedIcon className="size-2" /> : <div className="size-2"></div> }
                         </div>
-                        <span className={`text-pretty font-GeistMono text-xs ${book.read ? "line-through text-muted-foreground" : "text-black"}`}>
+                        <span className={`text-pretty font-GeistMono text-xs ${book.read ? "line-through text-muted-foreground" : ""}`}>
                             {book.title}
                         </span>
                     </label>
@@ -54,9 +55,9 @@ export default function ReadingPage() {
             className="rounded-full h-8 px-4 py-1 font-GeistMono text-xs text-muted-foreground print:hidden"
             variant="secondary"
         >
-            <a href={"/"} target="_blank">
+            <Link href={"/"}>
                 <span className="font-[cambria]"> ← </span>Take me home
-            </a>
+            </Link>
         </Button>
         <Section>
           <hr className="my-2 border-gray-300" />

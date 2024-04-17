@@ -2,6 +2,7 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { formatDistanceToNowStrict } from "date-fns";
+import Link from "next/link";
 
 const widgetVariants = cva(
   "inline-flex items-center rounded-md border px-4 py-2 text-nowrap",
@@ -37,10 +38,11 @@ function Widget({ className, variant, label, link, timestamp, ...props }: Widget
   return (
     <div className={cn(widgetVariants({ variant }), className)} {...props}>
       <span>{formattedTimestamp}  &nbsp; ⎯  &nbsp; </span>
-      <a href={link} className="hover:underline"> {label}  <span className="font-[cambria]"> →</span></a>
+      <Link href={link}>
+        <p className="hover:underline">{label}  <span className="font-[cambria]"> →</span></p>
+      </Link>
     </div>
   );
 }
-
 
 export { Widget, widgetVariants };
