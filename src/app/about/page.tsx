@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="flex items-center space-x-4">
           <div>
             <Avatar className="size-16">
-              <AvatarImage className="border border-gray-300 rounded-full" alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
+              <AvatarImage className="border rounded-full" alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
           </div>

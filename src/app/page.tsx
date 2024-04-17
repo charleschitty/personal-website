@@ -13,7 +13,6 @@ import React from 'react';
 import moment from 'moment-timezone';
 import { Theme } from '@radix-ui/themes';
 import { ThemeProvider } from 'next-themes';
-import { themes } from './themes';
 
 
 export const metadata: Metadata = {
@@ -24,13 +23,13 @@ export default function Page() {
   const locationTime = moment().tz(RESUME_DATA.timeZone).format('h:mm A');
 
   return (
-    <ThemeProvider {...themes}>
-    <Theme appearance="light">
+    <ThemeProvider>
+    <Theme>
       <section className="mx-auto w-full max-w-34 space-y-12 print:space-y-6">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mb-[-22px]">
           <div>
-            <Avatar className="size-16">
-              <AvatarImage className="border border-gray-300 rounded-full" alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
+            <Avatar className="size-16 mb-[10px]">
+              <AvatarImage className="border rounded-full" alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl.src} />
               <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
             </Avatar>
           </div>
