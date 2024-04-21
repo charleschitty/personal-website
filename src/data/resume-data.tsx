@@ -16,7 +16,7 @@ export const RESUME_DATA = {
   about:
     "Fullstack Software Engineer",
   summary:
-    "A full stack designer based in San Francisco but working remotely.",
+    "A full stack developer based in San Francisco.",
   summaryAbout:
     "Hi, my name is Charles and I 22-years old. When I am not staring at screen working on my next coding project, I like to run, read, and listen to music. Last month I just completed my first half marathon in Portland and now I'm spending my free time catching up on some books on my to-do list. Some books that I have just started on include Kafka on the Shore and Crying in H-Mart.",
   futureEvents: [
