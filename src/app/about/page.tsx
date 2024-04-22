@@ -46,14 +46,14 @@ export default function AboutPage() {
             {RESUME_DATA.summaryAbout}
           </p>
         </Section>
-        <Section>
+        {/* <Section>
           <h2 className="text-xs text-muted-foreground font-geist-mono font-medium">Some things I am looking forward to</h2>
           <ul className="list-disc pl-4">
             {RESUME_DATA.futureEvents.map((event) => {
               return <li key={event} className="text-pretty font-GeistMono text-xs">{event}</li>;
             })}
           </ul>
-        </Section>
+        </Section> */}
         <Section>
           <h2 className="text-xs font-medium text-muted-foreground font-geist-mono">Contact</h2>
           <div className="flex gap-x-4 pt-1 font-geistMono text-sm text-muted-foreground print:hidden">

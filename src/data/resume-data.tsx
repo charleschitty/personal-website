@@ -18,13 +18,10 @@ export const RESUME_DATA = {
   summary:
     "A full stack developer based in San Francisco.",
   summaryAbout:
-    "Hi, my name is Charles and I 22-years old. When I am not staring at screen working on my next coding project, I like to run, read, and listen to music. Last month I just completed my first half marathon in Portland and now I'm spending my free time catching up on some books on my to-do list. Some books that I have just started on include Kafka on the Shore and Crying in H-Mart.",
+    `Hi, my name is Charles and I am 22-years old. When I am not staring at screen working on my next coding project, I like to run, read, and listen to music. Last month I just completed my first half marathon in Portland and now I'm spending my free time catching up on some books on my to-do list. Some books that I have just started on include Kafka on the Shore and Crying in H-Mart.
+
+    Find my resume attached at the bottom.`,
   futureEvents: [
-    "Solo Leveling pt 2",
-    "Cherry Blossoms",
-    "Rain",
-    "Ice Cream from the Ice Cream Bar",
-    "The CAS concert"
   ],
   avatarUrl: profilePicture,
   personalWebsiteUrl: "https://charleschitty.com",
